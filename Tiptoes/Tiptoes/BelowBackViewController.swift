@@ -8,10 +8,25 @@
 
 import UIKit
 
-class SecondaryViewController: UIViewController {
+class BelowBackViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "BelowBackViewController"
+        view.backgroundColor = UIColor.white
+        
+        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 150, height: 80))
+        button.setTitleColor(UIColor.blue, for: .normal)
+        button.setTitle("button", for: .normal)
+        button.addTarget(self, action: #selector(nav), for: .touchUpInside)
+        
+        view.addSubview(button)
     }
-
+    
+    func nav(){
+        let vc = TopMostViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
