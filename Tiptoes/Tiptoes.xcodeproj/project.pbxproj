@@ -59,10 +59,10 @@
 				674123541E279E47007E4393 /* AppDelegate.swift */,
 				674123561E279E47007E4393 /* TopMostViewController.swift */,
 				674123681E27A01F007E4393 /* BelowBackViewController.swift */,
+				674123661E279EBC007E4393 /* TiptoesNavController.swift */,
 				6741235B1E279E47007E4393 /* Assets.xcassets */,
 				6741235D1E279E47007E4393 /* LaunchScreen.storyboard */,
 				674123601E279E47007E4393 /* Info.plist */,
-				674123661E279EBC007E4393 /* TiptoesNavController.swift */,
 			);
 			path = Tiptoes;
 			sourceTree = "<group>";
