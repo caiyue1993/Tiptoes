@@ -13,10 +13,8 @@ class TopMostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "TopMostViewController"
+        title = "FEEDLY"
         view.backgroundColor = UIColor.white
-        
-        
     }
     
     

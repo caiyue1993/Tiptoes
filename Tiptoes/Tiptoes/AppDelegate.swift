@@ -18,10 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         homeViewController = BelowBackViewController()
-//        navigationController = TiptoesNavController(navigationBarClass: TiptoesNavBar.self, toolbarClass: nil)
         navigationController = TiptoesNavController(rootViewController: homeViewController)
-//        navigationController.viewControllers = [homeViewController]
-        //navigationController = TiptoesNavController(rootViewController: homeViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true

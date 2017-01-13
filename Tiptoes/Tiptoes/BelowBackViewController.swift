@@ -13,7 +13,7 @@ class BelowBackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "BelowBackViewController"
+        title = "HOME"
         view.backgroundColor = UIColor.white
         
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 150, height: 80))
