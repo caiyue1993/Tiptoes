@@ -1,13 +1,14 @@
 
 # Description 
-Slip system's own navigation component from your memory, create a new one that you care for. **Tiptoes** is a navigation controller that will make the navigating process more silent and delicate. It has two styles now. 
-
+Forget about the appearance of system's own navigation component, create a new one that you care for. **Tiptoes** is a subclass of UINavigationController that will make the navigating process more silent and delicate. It support two styles now. 
 ## Style 1
 
 ## Style 2
 
+# Usage
+
 # Author
-[caiyue1993] made this with ❤️. And he was inspired by [Unread] APP and his idol is [Jared Sinclair](https://github.com/jaredsinclair).
+[caiyue1993](https://github.com/caiyue1993) made this with ❤️. Inspired by Unread APP.
 
 # Contribute
 As you can see, Tiptoes provide a new idea to customize navigation bar. Now it only support two styles due to the limitation of energy. Really hope you can join me and make this repository more splendid.
