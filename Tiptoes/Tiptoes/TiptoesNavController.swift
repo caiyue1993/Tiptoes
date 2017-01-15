@@ -60,14 +60,18 @@ class TiptoesNavController: UINavigationController {
             bar.currentTitleLabel.center = CGPoint(x: view.frame.width / 2, y: bar.tiptoes.center.y)
             bar.priorTitleLabel.frame = bar.currentTitleLabel.frame
         }
-        interactivePopGestureRecognizer?.addTarget(self, action: #selector(handleTiptoesDisplay))
+        interactivePopGestureRecognizer?.addTarget(self, action: #selector(handleTiptoesDisplay(sender:)))
     }
     
-    func handleTiptoesDisplay() {
+    func handleTiptoesDisplay(sender: UIGestureRecognizer) {
+        
         // You can customize the transition style here
         let currentAlpha = (interactivePopGestureRecognizer?.location(in: view).x)! / view.frame.width
-        barCurrentTitleLabel.alpha = 1 - currentAlpha
-        barPriorTitleLabel.alpha = currentAlpha
+        
+        // Magic number is to fix the bug that when pan gesture goed half and stop
+        barCurrentTitleLabel.alpha = (1 - currentAlpha) < 0.5 ? (1 - currentAlpha) * 2 : 1 // 1 -> 0
+        barPriorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
+        
     }
     
 }
@@ -114,8 +118,9 @@ class TiptoesNavBar: UINavigationBar {
     var currentTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 8)
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
         label.text = "HOME"
+        label.textAlignment = .center
         return label
     }()
     
@@ -123,13 +128,14 @@ class TiptoesNavBar: UINavigationBar {
     var priorTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 8)
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
+        label.textAlignment = .center
         return label
     }()
     
     var tiptoes: UIView = {
         let toes = UIView()
-        toes.backgroundColor = UIColor.lightGray
+        toes.backgroundColor = UIColor(red: 66.0/255.0, green: 69.0/255.0, blue: 78.0/255.0, alpha:1.0)
         return toes
     }()
     
