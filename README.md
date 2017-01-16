@@ -11,7 +11,7 @@ For example:
 
 Fade-in-and-out:
 
-<img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/fade-in-and-out.png" width="260">
+<img src="https://ooo.0o0.ooo/2017/01/16/587cc90385e3f.gif" width="260">
 
 - Everything that related to a UIView. 
 
