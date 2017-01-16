@@ -1,3 +1,4 @@
+![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
 
 # Description 🍃
 Forget about the appearance of system's own navigation component, create a new one that you really care for. **Tiptoes** is a subclass of UINavigationController that will make the navigating process more silent and delicate. 
@@ -25,6 +26,7 @@ Fade-in-and-out:
 # Contribute
 As you can see, Tiptoes provide a thinking to customize navigation bar. But he is not strong enough due to the limitation of author's time and energy. So I open up this repo to GitHub and I am fully looking forward that you guys can join me and make this repository more splendid.
 
-# To do list
+# License
+MIT
 
 
