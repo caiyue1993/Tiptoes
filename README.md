@@ -8,6 +8,11 @@ Tiptoes is just like a raw wood and you can do lots of customization.
 For example:
 
 - Transition effect. In this repository it supports fade-in-and-out effect. And since we can get the animation parameters, we can create more lovely transition effect.
+
+Fade-in-and-out:
+
+<img src="https://ooo.0o0.ooo/2017/01/16/587cde03ee1ad.gif" width="260">
+
 - Everything that related to a UIView. 
 
 # Usage
