@@ -20,11 +20,14 @@ Fade-in-and-out:
 2. In the place of your setting navigationController's rootViewController code(normally in AppDelegate.swift), replace ```UINavigationController(rootViewController:xxx)```with```TiptoesNavController(rootViewController:xxx)```
 3. Enjoy!
 
+# Demo
+Git clone or directly download this repository. Then open ```Tiptoes.xcodeproj```.
+
 # Author
 [caiyue1993](https://github.com/caiyue1993) made this with ❤️. Inspired by Unread APP.
 
 # Contribute
-As you can see, Tiptoes provide a thinking to customize navigation bar. But he is not strong enough due to the limitation of author's time and energy. So I open up this repo to GitHub and I am fully looking forward that you guys can join me and make this repository more splendid.
+As you can see, Tiptoes provide a thinking to customize navigation bar. But it is not perfect due to the limitation of author's time and energy. So I open up this repo to GitHub and I am fully looking forward that you guys can join me and make this repository more splendid.
 
 # License
 MIT
