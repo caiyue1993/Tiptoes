@@ -11,10 +11,17 @@ For example:
 - Everything that related to a UIView. 
 
 # Usage
-As easy as follows:
+1. Drag the TiptoesNavController.swift to your project.
+2. In the place of your setting navigationController's rootViewController code(normally in AppDelegate.swift):
+Replace 
 ```Swift
-
+UINavigationController(rootViewController:xxx)
 ```
+to
+```Swift
+TiptoesNavigationController(rootViewController:xxx)
+```
+3. Enjoy!
 
 # Author
 [caiyue1993](https://github.com/caiyue1993) made this with ❤️. Inspired by Unread APP.
@@ -24,5 +31,4 @@ As you can see, Tiptoes provide a thinking to customize navigation bar. But he i
 
 # To do list
 
-- 解决如果前一个如果 title 太短，返回的时候自动被截断的问题
 
