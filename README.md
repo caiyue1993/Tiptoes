@@ -12,15 +12,7 @@ For example:
 
 # Usage
 1. Drag the TiptoesNavController.swift to your project.
-2. In the place of your setting navigationController's rootViewController code(normally in AppDelegate.swift):
-Replace 
-```Swift
-UINavigationController(rootViewController:xxx)
-```
-to
-```Swift
-TiptoesNavigationController(rootViewController:xxx)
-```
+2. In the place of your setting navigationController's rootViewController code(normally in AppDelegate.swift), replace ```UINavigationController(rootViewController:xxx)```with```TiptoesNavigationController(rootViewController:xxx)```
 3. Enjoy!
 
 # Author
