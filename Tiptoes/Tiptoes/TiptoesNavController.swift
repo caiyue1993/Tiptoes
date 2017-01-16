@@ -88,7 +88,9 @@ extension TiptoesNavController: UINavigationBarDelegate {
         if let pushTitle = item.title {
             barCurrentTitleLabel.text = pushTitle
             barCurrentTitleLabel.sizeToFit()
-            // TO DO: put label to right center position, now if the title is too long we can find that label is not at the center
+            if let bar = navigationBar as? TiptoesNavBar {
+                barCurrentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
+            }
         }
     }
     
@@ -108,6 +110,9 @@ extension TiptoesNavController: UINavigationBarDelegate {
     public func navigationBar(_ navigationBar: UINavigationBar, didPop item: UINavigationItem) {
         barCurrentTitleLabel.text = barPriorTitleLabel.text
         barCurrentTitleLabel.sizeToFit()
+        if let bar = navigationBar as? TiptoesNavBar {
+            barCurrentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
+        }
         barCurrentTitleLabel.alpha = 1.0
         barPriorTitleLabel.isHidden = true
     }
