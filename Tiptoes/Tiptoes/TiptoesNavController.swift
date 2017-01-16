@@ -57,7 +57,7 @@ class TiptoesNavController: UINavigationController {
             view.addSubview(bar.priorTitleLabel)
             bar.tiptoes.frame = CGRect(x: 0, y: view.frame.height - tiptoesHeight, width: view.frame.width, height: tiptoesHeight)
             bar.currentTitleLabel.sizeToFit()
-            bar.currentTitleLabel.center = CGPoint(x: view.frame.width / 2, y: bar.tiptoes.center.y)
+            bar.currentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
             bar.priorTitleLabel.frame = bar.currentTitleLabel.frame
         }
         interactivePopGestureRecognizer?.addTarget(self, action: #selector(handleTiptoesDisplay(sender:)))
@@ -107,6 +107,7 @@ extension TiptoesNavController: UINavigationBarDelegate {
     // The status of completion of pop
     public func navigationBar(_ navigationBar: UINavigationBar, didPop item: UINavigationItem) {
         barCurrentTitleLabel.text = barPriorTitleLabel.text
+        barCurrentTitleLabel.sizeToFit()
         barCurrentTitleLabel.alpha = 1.0
         barPriorTitleLabel.isHidden = true
     }

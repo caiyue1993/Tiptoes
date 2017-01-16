@@ -15,9 +15,11 @@ class BelowBackViewController: UIViewController {
         
         title = "HOME"
         view.backgroundColor = UIColor(red: 59.0/255.0, green: 62.0/255.0, blue: 67.0/255.0, alpha: 1.0)
-        let button = UIButton(frame: CGRect(x: view.frame.width / 2, y: 100, width: 150, height: 80))
-        button.setTitleColor(UIColor.white, for: .normal)
+        let button = UIButton()
         button.setTitle("Button", for: .normal)
+        button.sizeToFit()
+        button.center = view.center
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(nav), for: .touchUpInside)
         
         view.addSubview(button)
