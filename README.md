@@ -10,7 +10,7 @@ Forget about the appearance of system's own navigation component, create a new o
 You can do lots of customization yourself.
 For example:
 
-- Transition effect. In this repository it supports fade-in-and-out effect. And since we can get the animation parameters, we can create more lovely transition effect.
+- Transition effect. The default effect of Tiptoes is fade-in-and-out. And since we can get the animation parameters, we can create more lovely one.
 
 Fade-in-and-out:
 
@@ -24,13 +24,13 @@ Fade-in-and-out:
 3. Enjoy!
 
 # Demo
-Git clone or directly download this repository. Then open ```Tiptoes.xcodeproj```.
+Git clone or directly download this repository. Then open ```Tiptoes.xcodeproj```. Run project.
 
 # Author
 [caiyue1993](https://github.com/caiyue1993) made this with ❤️. Inspired by Unread APP.
 
 # Contribute
-As you can see, Tiptoes provide a thinking to customize navigation bar. But it is not perfect due to the limitation of author's time and energy. So I open up this repo to GitHub and I am fully looking forward that you guys can join me and make this repository more splendid.
+As you can see, Tiptoes provide a thinking to customize navigation bar. But it is not perfect due to the limitation of author's time and energy. So I open up this repo to GitHub and I am looking forward that you guys can join me and make this repository more splendid.
 
 # License
 MIT
