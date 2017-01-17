@@ -51,6 +51,7 @@ class TiptoesNavController: UINavigationController {
         // Hide the system navigation bar
         navigationBar.isHidden = true
         
+        
         if let bar = navigationBar as? TiptoesNavBar {
             view.addSubview(bar.tiptoes)
             view.addSubview(bar.currentTitleLabel)
@@ -73,7 +74,6 @@ class TiptoesNavController: UINavigationController {
         barPriorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
         
     }
-    
 }
 
 extension TiptoesNavController: UINavigationBarDelegate {

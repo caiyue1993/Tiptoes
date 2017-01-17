@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController = TiptoesNavController(rootViewController: homeViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
 
