@@ -1,4 +1,7 @@
-![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
+# Tiptoes
+![iOS](https://img.shields.io/badge/iOS-8.0%2B-blue.svg) 
+![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg) 
+![BLOG](https://img.shields.io/badge/blog-http%3A%2F%2Fsoledad.me-lightgrey.svg) 
 
 # Description 🍃
 Forget about the appearance of system's own navigation component, create a new one that you really care for. **Tiptoes** is a subclass of UINavigationController that will make the navigating process more silent and delicate. 
