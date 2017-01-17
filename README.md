@@ -13,8 +13,9 @@ For example:
 - Transition effect. The default effect of Tiptoes is fade-in-and-out. And since we can get the animation parameters, we can create more lovely one.
 
 Fade-in-and-out:
+(The flash in the bottom is due to gif)
 
-<img src="https://ooo.0o0.ooo/2017/01/16/587cc90385e3f.gif" width="260">
+<img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/fade-in-and-out.gif" width="260">
 
 - Everything that related to a UIView. 
 
