@@ -28,7 +28,7 @@ Fade-in-and-out:
 Git clone or directly download this repository. Then open ```Tiptoes.xcodeproj```. Run project.
 
 # Author
-[CaiYue\_](http://weibo.com/caiyue233) made this with ❤️. Inspired by Unread APP.
+[@CaiYue\_](http://weibo.com/caiyue233) made this with ❤️. Inspired by Unread APP.
 
 # Contribute
 As you can see, Tiptoes provide a thinking to customize navigation bar. But it is not perfect due to the limitation of author's time and energy. So I open up this repo to GitHub and I am looking forward that you guys can join me and make this repository more splendid.
