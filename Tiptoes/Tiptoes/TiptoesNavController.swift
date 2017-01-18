@@ -12,21 +12,15 @@ class TiptoesNavController: UINavigationController {
     
     var barCurrentTitleLabel: UILabel {
         get {
-            if let bar = navigationBar as? TiptoesNavBar {
-                return bar.currentTitleLabel
-            } else {
-                return UILabel()
-            }
+            guard let bar = navigationBar as? TiptoesNavBar else { return UILabel() }
+            return bar.currentTitleLabel
         }
     }
     
     var barPriorTitleLabel: UILabel {
         get {
-            if let bar = navigationBar as? TiptoesNavBar {
-                return bar.priorTitleLabel
-            } else {
-                return UILabel()
-            }
+            guard let bar = navigationBar as? TiptoesNavBar else { return UILabel() }
+            return bar.priorTitleLabel
         }
     }
     
@@ -50,29 +44,27 @@ class TiptoesNavController: UINavigationController {
         
         // Hide the system navigation bar
         navigationBar.isHidden = true
-        
-        
-        if let bar = navigationBar as? TiptoesNavBar {
-            view.addSubview(bar.tiptoes)
-            view.addSubview(bar.currentTitleLabel)
-            view.addSubview(bar.priorTitleLabel)
-            bar.tiptoes.frame = CGRect(x: 0, y: view.frame.height - tiptoesHeight, width: view.frame.width, height: tiptoesHeight)
-            bar.currentTitleLabel.sizeToFit()
-            bar.currentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
-            bar.priorTitleLabel.frame = bar.currentTitleLabel.frame
-        }
         interactivePopGestureRecognizer?.addTarget(self, action: #selector(handleTiptoesDisplay(sender:)))
+        
+        guard let bar = navigationBar as? TiptoesNavBar else { return }
+        view.addSubview(bar.tiptoes)
+        view.addSubview(bar.currentTitleLabel)
+        view.addSubview(bar.priorTitleLabel)
+        bar.tiptoes.frame = CGRect(x: 0, y: view.frame.height - tiptoesHeight, width: view.frame.width, height: tiptoesHeight)
+        bar.currentTitleLabel.sizeToFit()
+        bar.currentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
+        bar.priorTitleLabel.frame = bar.currentTitleLabel.frame
     }
     
     func handleTiptoesDisplay(sender: UIGestureRecognizer) {
-        
         // You can customize the transition style here
-        let currentAlpha = (interactivePopGestureRecognizer?.location(in: view).x)! / view.frame.width
-        
-        // Magic number is to fix the bug that when pan gesture goed half and stop
-        barCurrentTitleLabel.alpha = (1 - currentAlpha) < 0.5 ? (1 - currentAlpha) * 2 : 1 // 1 -> 0
-        barPriorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
-        
+        if let portionValue = interactivePopGestureRecognizer?.location(in: view).x {
+            let currentAlpha = portionValue / view.frame.width
+            
+            // Magic number is to fix the bug that when pan gesture goed half and stop
+            barCurrentTitleLabel.alpha = (1 - currentAlpha) < 0.5 ? (1 - currentAlpha) * 2 : 1 // 1 -> 0
+            barPriorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
+        }
     }
 }
 
