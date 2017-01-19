@@ -4,7 +4,7 @@
 ![BLOG](https://img.shields.io/badge/blog-http%3A%2F%2Fsoledad.me-lightgrey.svg) 
 
 # Description 🍃
-Forget about the appearance of system's own navigation component, create a new one that you really care for. **Tiptoes** is a subclass of UINavigationController that will make the navigating process more silent and delicate. 
+Forget about the appearance of system's own navigation component, create a new one that you really care for. **Tiptoes** is a subclass of UINavigationController that will make the navigating process more silent and simple. 
 
 # Customization 
 You can do lots of customization yourself.
@@ -13,7 +13,6 @@ For example:
 - Transition effect. The default effect of Tiptoes is fade-in-and-out. And since we can get the animation parameters, we can create more lovely one.
 
 Fade-in-and-out:
-(The flash in the bottom is due to gif)
 
 <img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/fade-in-and-out.gif" width="260">
 
@@ -22,10 +21,9 @@ Fade-in-and-out:
 # Usage
 1. Drag the TiptoesNavController.swift to your project.
 2. In the place of your setting navigationController's rootViewController code(normally in AppDelegate.swift), replace ```UINavigationController(rootViewController:xxx)```with```TiptoesNavController(rootViewController:xxx)```
-3. Enjoy!
+3. Enjoy it!
 
-# Demo
-Git clone or directly download this repository. Then open ```Tiptoes.xcodeproj```. Run project.
+( You can also git clone or download this repository directly, then open ```Tiptoes.xcodeproj```, run project and see the demo.)
 
 # Author
 [caiyue1993](https://github.com/caiyue1993) made this with ❤️. Inspired by Unread APP.
