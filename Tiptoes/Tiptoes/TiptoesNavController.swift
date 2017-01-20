@@ -9,21 +9,7 @@
 import UIKit
 
 class TiptoesNavController: UINavigationController {
-    
-    var barCurrentTitleLabel: UILabel {
-        get {
-            guard let bar = navigationBar as? TiptoesNavBar else { return UILabel() }
-            return bar.currentTitleLabel
-        }
-    }
-    
-    var barPriorTitleLabel: UILabel {
-        get {
-            guard let bar = navigationBar as? TiptoesNavBar else { return UILabel() }
-            return bar.priorTitleLabel
-        }
-    }
-    
+
     private let tiptoesHeight = UIApplication.shared.statusBarFrame.size.height
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -57,13 +43,16 @@ class TiptoesNavController: UINavigationController {
     }
     
     func handleTiptoesDisplay(sender: UIGestureRecognizer) {
+        
+        guard let bar = navigationBar as? TiptoesNavBar else { return }
+        
         // You can customize the transition style here
         if let portionValue = interactivePopGestureRecognizer?.location(in: view).x {
             let currentAlpha = portionValue / view.frame.width
             
             // Magic number is to fix the bug that when pan gesture goed half and stop
-            barCurrentTitleLabel.alpha = (1 - currentAlpha) < 0.5 ? (1 - currentAlpha) * 2 : 1 // 1 -> 0
-            barPriorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
+            bar.currentTitleLabel.alpha = (1 - currentAlpha) < 0.5 ? (1 - currentAlpha) * 2 : 1 // 1 -> 0
+            bar.priorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
         }
     }
 }
@@ -71,28 +60,30 @@ class TiptoesNavController: UINavigationController {
 extension TiptoesNavController: UINavigationBarDelegate {
     
     public func navigationBar(_ navigationBar: UINavigationBar, shouldPush item: UINavigationItem) -> Bool {
-        barPriorTitleLabel.text = ""
-        barPriorTitleLabel.isHidden = false
+        guard let bar = navigationBar as? TiptoesNavBar else { return true }
+        bar.priorTitleLabel.text = ""
+        bar.priorTitleLabel.isHidden = false
         return true
     }
     
     public func navigationBar(_ navigationBar: UINavigationBar, didPush item: UINavigationItem) {
         if let pushTitle = item.title {
-            barCurrentTitleLabel.text = pushTitle
-            barCurrentTitleLabel.sizeToFit()
-            if let bar = navigationBar as? TiptoesNavBar {
-                barCurrentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
-            }
+            guard let bar = navigationBar as? TiptoesNavBar else { return }
+            bar.currentTitleLabel.text = pushTitle
+            bar.currentTitleLabel.sizeToFit()
+            bar.currentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
         }
     }
     
     public func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {
-        barPriorTitleLabel.isHidden = false
+        guard let bar = navigationBar as? TiptoesNavBar else { return true }
+        bar.priorTitleLabel.isHidden = false
+        
         // Get the former viewcontroller
         let numberOfViewControllers = viewControllers.count
         if numberOfViewControllers > 0 {
             if let popTitle = viewControllers[numberOfViewControllers - 1].title {
-                barPriorTitleLabel.text = popTitle
+                bar.priorTitleLabel.text = popTitle
             }
         }
         return true
@@ -100,13 +91,12 @@ extension TiptoesNavController: UINavigationBarDelegate {
     
     // The status of completion of pop
     public func navigationBar(_ navigationBar: UINavigationBar, didPop item: UINavigationItem) {
-        barCurrentTitleLabel.text = barPriorTitleLabel.text
-        barCurrentTitleLabel.sizeToFit()
-        if let bar = navigationBar as? TiptoesNavBar {
-            barCurrentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
-        }
-        barCurrentTitleLabel.alpha = 1.0
-        barPriorTitleLabel.isHidden = true
+        guard let bar = navigationBar as? TiptoesNavBar else { return }
+        bar.currentTitleLabel.text = bar.priorTitleLabel.text
+        bar.currentTitleLabel.sizeToFit()
+        bar.currentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
+        bar.currentTitleLabel.alpha = 1.0
+        bar.priorTitleLabel.isHidden = true
     }
 }
 
