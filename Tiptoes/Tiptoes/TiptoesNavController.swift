@@ -31,7 +31,10 @@ class TiptoesNavController: UINavigationController {
         // Hide the system navigation bar
         navigationBar.isHidden = true
         interactivePopGestureRecognizer?.addTarget(self, action: #selector(handleTiptoesDisplay(sender:)))
-        
+        configureNavigationBar()
+    }
+    
+    private func configureNavigationBar() {
         guard let bar = navigationBar as? TiptoesNavBar else { return }
         view.addSubview(bar.tiptoes)
         view.addSubview(bar.currentTitleLabel)
@@ -42,7 +45,7 @@ class TiptoesNavController: UINavigationController {
         bar.priorTitleLabel.frame = bar.currentTitleLabel.frame
     }
     
-    func handleTiptoesDisplay(sender: UIGestureRecognizer) {
+    @objc private func handleTiptoesDisplay(sender: UIGestureRecognizer) {
         
         guard let bar = navigationBar as? TiptoesNavBar else { return }
         
