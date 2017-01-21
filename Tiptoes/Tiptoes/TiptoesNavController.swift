@@ -34,7 +34,7 @@ class TiptoesNavController: UINavigationController {
         configureNavigationBar()
     }
     
-    private func configureNavigationBar() {
+    fileprivate func configureNavigationBar() {
         guard let bar = navigationBar as? TiptoesNavBar else { return }
         view.addSubview(bar.tiptoes)
         view.addSubview(bar.currentTitleLabel)
@@ -46,17 +46,15 @@ class TiptoesNavController: UINavigationController {
     }
     
     @objc private func handleTiptoesDisplay(sender: UIGestureRecognizer) {
-        
         guard let bar = navigationBar as? TiptoesNavBar else { return }
         
         // You can customize the transition style here
-        if let portionValue = interactivePopGestureRecognizer?.location(in: view).x {
-            let currentAlpha = portionValue / view.frame.width
-            
-            // Magic number is to fix the bug that when pan gesture goed half and stop
-            bar.currentTitleLabel.alpha = (1 - currentAlpha) < 0.5 ? (1 - currentAlpha) * 2 : 1 // 1 -> 0
-            bar.priorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
-        }
+        let portionValue = sender.location(in: view).x
+        let currentAlpha = portionValue / view.frame.width
+        
+        // Magic number is to fix the bug that when pan gesture goed half and stop
+        bar.currentTitleLabel.alpha = (1 - currentAlpha) < 0.5 ? (1 - currentAlpha) * 2 : 1 // 1 -> 0
+        bar.priorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
     }
 }
 
