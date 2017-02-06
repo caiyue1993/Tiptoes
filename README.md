@@ -1,5 +1,5 @@
 
-![Tiptoes](https://github.com/caiyue1993/Tiptoes/blob/master/images/tiptoes-cover.png)
+<img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/tiptoes-cover.png" width="800">
 
 ## Description :leaves:
 
