@@ -1,5 +1,7 @@
-# Tiptoes
 
+![Tiptoes](https://github.com/caiyue1993/Tiptoes/blob/master/images/tiptoes-cover.png)
+
+## Description
 A subclass of UINavigationController that will make the navigating process more silent and simple.
 
 ## Why You'd Want This 
