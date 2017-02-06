@@ -26,7 +26,7 @@ Replace with:
 ```
 TiptoesNavController(rootViewController:xxx)
 ```
-
+Then enjoy it!
 ## Author
 
 [@CaiYue\_](http://weibo.com/caiyue233) made this with ❤️. Inspired by Unread APP.
