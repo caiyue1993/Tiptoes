@@ -15,7 +15,7 @@ Actually you can customize transition effect yourself.
 However,the default transition effect of Tiptoes is fade-in-and-out:
 
 <p align="center">
-  <img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/fade-in-and-out.gif">
+  <img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/fade-in-and-out.gif" width="280">
 </p>
 
 ## Usage
