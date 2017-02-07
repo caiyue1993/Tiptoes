@@ -1,5 +1,6 @@
-
+<p align="center">
 <img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/tiptoes-cover.png" width="800">
+</p>
 
 ## Description :leaves:
 
