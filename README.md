@@ -1,7 +1,3 @@
-<p align="center">
-<img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/tiptoes-cover.png" width="800">
-</p>
-
 ## Description :leaves:
 
 A subclass of UINavigationController that will make the navigating process more silent and simple.
@@ -15,9 +11,7 @@ If you are tired of using system's own navigation controller and are seeking som
 Actually you can customize transition effect yourself.
 However,the default transition effect of Tiptoes is fade-in-and-out:
 
-<p align="center">
-  <img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/fade-in-and-out.gif" width="280">
-</p>
+![](https://github.com/caiyue1993/Tiptoes/blob/master/images/fade-in-and-out.gif)
 
 ## Usage
 
