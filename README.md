@@ -4,7 +4,7 @@ A subclass of UINavigationController that will make the navigating process more 
 
 ## Why You'd Want This 
 
-If you are tired of using system's own navigation controller and are seeking something different,Tiptoes may suit your needs.And it doesn't break any of your existing code. Just plug and enjoy.
+If you are tired of using system's own navigation controller and are seeking something different, Tiptoes may suit your needs. And it doesn't break any of your existing code. Just plug and enjoy.
 
 ## Transition Effect Customization 
 
