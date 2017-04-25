@@ -25,6 +25,10 @@ TiptoesNavController(rootViewController:xxx)
 ```
 And then just enjoy it!
 
+## One more thing
+
+Now Sprint(小目标) App has used Tiptoes and is ready for sale, [Download link](https://itunes.apple.com/cn/app/sprint-%E5%B0%8F%E7%9B%AE%E6%A0%87-%E9%87%8F%E5%8C%96%E4%BD%A0%E7%9A%84%E8%BF%9B%E6%AD%A5/id1215312957?mt=8&ign-mpt=uo%3D4).
+
 ## License
 
 MIT
