@@ -29,7 +29,9 @@ And then just enjoy it!
 
 Now [小目标-量化你的进步](https://itunes.apple.com/cn/app/sprint-%E5%B0%8F%E7%9B%AE%E6%A0%87-%E9%87%8F%E5%8C%96%E4%BD%A0%E7%9A%84%E8%BF%9B%E6%AD%A5/id1215312957?mt=8&ign-mpt=uo%3D4) has used Tiptoes and is ready for sale. Welcome to download on App Store.
 
-[![Image Alt Text](https://github.com/caiyue1993/Tiptoes/blob/master/images/appstore.png](https://itunes.apple.com/cn/app/sprint-%E5%B0%8F%E7%9B%AE%E6%A0%87-%E9%87%8F%E5%8C%96%E4%BD%A0%E7%9A%84%E8%BF%9B%E6%AD%A5/id1215312957?mt=8&ign-mpt=uo%3D4)
+<a href="https://itunes.apple.com/cn/app/sprint-%E5%B0%8F%E7%9B%AE%E6%A0%87-%E9%87%8F%E5%8C%96%E4%BD%A0%E7%9A%84%E8%BF%9B%E6%AD%A5/id1215312957?mt=8&ign-mpt=uo%3D4">
+  <img src="https://github.com/caiyue1993/Tiptoes/blob/master/images/appstore.png">
+</a>
 
 ## License
 
