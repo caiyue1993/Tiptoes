@@ -15,11 +15,11 @@ class TiptoesNavController: UINavigationController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    
+  
     override init(rootViewController: UIViewController) {
         super.init(navigationBarClass: TiptoesNavBar.self, toolbarClass: nil)
         viewControllers = [rootViewController]
-    }
+    } // 因为子类提供了这个 Designated Method，因此不会自动继承 init(nibName:bundle:) 方法，但是 init(nibName:bundle:) 又是必须实现的，那么就遵循一下吧。可以说这是一个 bug，是应该在父类的 init(nibName:bundle:) 前加入 required 关键字的。
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
