@@ -11,7 +11,7 @@ If you are tired of using system's own navigation controller and are seeking som
 Actually you can customize transition effect yourself.
 However,the default transition effect of Tiptoes is fade-in-and-out:
 
-![](https://github.com/caiyue1993/Tiptoes/blob/master/images/fade-in-and-out.gif)
+![](https://i.loli.net/2017/09/26/59c9cc9f7865f.gif)
 
 ## Usage
 
