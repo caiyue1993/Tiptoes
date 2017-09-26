@@ -10,12 +10,24 @@ import UIKit
 
 class TopMostViewController: UIViewController {
     
+    lazy var hintLabel: UILabel = {
+        let l = UILabel()
+        l.textColor = .black
+        l.text = "SWIPE TO RETURN"
+        l.sizeToFit()
+        return l
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "NEXT"
-        view.backgroundColor = UIColor(red: 59.0/255.0, green: 62.0/255.0, blue: 67.0/255.0, alpha: 1.0)
+        view.addSubview(hintLabel)
+        view.backgroundColor = .white
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        hintLabel.center = view.center
+    }
 }
 

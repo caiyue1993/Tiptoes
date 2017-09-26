@@ -10,19 +10,26 @@ import UIKit
 
 class BelowBackViewController: UIViewController {
 
+    lazy var demoButton: UIButton = {
+        let b = UIButton()
+        b.setTitle("JUMP TO NEXT", for: .normal)
+        b.setTitleColor(UIColor.black, for: .normal)
+        b.addTarget(self, action: #selector(nav), for: .touchUpInside)
+        return b
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "HOME"
-        view.backgroundColor = UIColor(red: 59.0/255.0, green: 62.0/255.0, blue: 67.0/255.0, alpha: 1.0)
-        let button = UIButton()
-        button.setTitle("Button", for: .normal)
-        button.sizeToFit()
-        button.center = view.center
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.addTarget(self, action: #selector(nav), for: .touchUpInside)
-        
-        view.addSubview(button)
+        view.backgroundColor = .white
+        view.addSubview(demoButton)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        demoButton.center = view.center
+        demoButton.sizeToFit()
     }
     
     func nav(){

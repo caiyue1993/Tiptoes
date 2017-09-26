@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		674123551E279E47007E4393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674123541E279E47007E4393 /* AppDelegate.swift */; };
 		674123571E279E47007E4393 /* TopMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674123561E279E47007E4393 /* TopMostViewController.swift */; };
-		6741235C1E279E47007E4393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6741235B1E279E47007E4393 /* Assets.xcassets */; };
 		6741235F1E279E47007E4393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6741235D1E279E47007E4393 /* LaunchScreen.storyboard */; };
 		674123671E279EBC007E4393 /* TiptoesNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674123661E279EBC007E4393 /* TiptoesNavController.swift */; };
 		674123691E27A01F007E4393 /* BelowBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674123681E27A01F007E4393 /* BelowBackViewController.swift */; };
@@ -19,7 +18,6 @@
 		674123511E279E47007E4393 /* Tiptoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiptoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		674123541E279E47007E4393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		674123561E279E47007E4393 /* TopMostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMostViewController.swift; sourceTree = "<group>"; };
-		6741235B1E279E47007E4393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6741235E1E279E47007E4393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		674123601E279E47007E4393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		674123661E279EBC007E4393 /* TiptoesNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiptoesNavController.swift; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 				674123561E279E47007E4393 /* TopMostViewController.swift */,
 				674123681E27A01F007E4393 /* BelowBackViewController.swift */,
 				674123661E279EBC007E4393 /* TiptoesNavController.swift */,
-				6741235B1E279E47007E4393 /* Assets.xcassets */,
 				6741235D1E279E47007E4393 /* LaunchScreen.storyboard */,
 				674123601E279E47007E4393 /* Info.plist */,
 			);
@@ -128,7 +125,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6741235F1E279E47007E4393 /* LaunchScreen.storyboard in Resources */,
-				6741235C1E279E47007E4393 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +294,7 @@
 				674123651E279E47007E4393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

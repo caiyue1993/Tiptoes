@@ -15,11 +15,11 @@ class TiptoesNavController: UINavigationController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-  
+    
     override init(rootViewController: UIViewController) {
         super.init(navigationBarClass: TiptoesNavBar.self, toolbarClass: nil)
         viewControllers = [rootViewController]
-    } // 因为子类提供了这个 Designated Method，因此不会自动继承 init(nibName:bundle:) 方法，但是 init(nibName:bundle:) 又是必须实现的，那么就遵循一下吧。可以说这是一个 bug，是应该在父类的 init(nibName:bundle:) 前加入 required 关键字的。
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -31,28 +31,32 @@ class TiptoesNavController: UINavigationController {
         // Hide the system navigation bar
         navigationBar.isHidden = true
         interactivePopGestureRecognizer?.addTarget(self, action: #selector(handleTiptoesDisplay(sender:)))
-        configureNavigationBar()
+        setupBar()
     }
     
-    fileprivate func configureNavigationBar() {
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
         guard let bar = navigationBar as? TiptoesNavBar else { return }
-        view.addSubview(bar.tiptoes)
-        view.addSubview(bar.currentTitleLabel)
-        view.addSubview(bar.priorTitleLabel)
         bar.tiptoes.frame = CGRect(x: 0, y: view.frame.height - tiptoesHeight, width: view.frame.width, height: tiptoesHeight)
         bar.currentTitleLabel.sizeToFit()
         bar.currentTitleLabel.center = CGPoint(x: view.center.x, y: bar.tiptoes.center.y)
         bar.priorTitleLabel.frame = bar.currentTitleLabel.frame
     }
     
+    fileprivate func setupBar() {
+        guard let bar = navigationBar as? TiptoesNavBar else { return }
+        view.addSubview(bar.tiptoes)
+        view.addSubview(bar.currentTitleLabel)
+        view.addSubview(bar.priorTitleLabel)
+    }
+    
     @objc private func handleTiptoesDisplay(sender: UIGestureRecognizer) {
         guard let bar = navigationBar as? TiptoesNavBar else { return }
         
-        // You can customize the transition style here
         let portionValue = sender.location(in: view).x
         let currentAlpha = portionValue / view.frame.width
         
-        // Magic number is to fix the bug that when pan gesture goed half and stop
         bar.currentTitleLabel.alpha = (1 - currentAlpha) < 0.5 ? (1 - currentAlpha) * 2 : 1 // 1 -> 0
         bar.priorTitleLabel.alpha = currentAlpha > 0.5 ? currentAlpha * 2 - 1 : 0 // 0 -> 1
     }
@@ -85,6 +89,7 @@ extension TiptoesNavController: UINavigationBarDelegate {
         if numberOfViewControllers > 0 {
             if let popTitle = viewControllers[numberOfViewControllers - 1].title {
                 bar.priorTitleLabel.text = popTitle
+                bar.priorTitleLabel.sizeToFit()
             }
         }
         return true
@@ -107,7 +112,7 @@ class TiptoesNavBar: UINavigationBar {
     var currentTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 8)
-        label.textColor = UIColor.white
+        label.textColor = UIColor.black
         label.text = "HOME"
         label.textAlignment = .center
         return label
@@ -117,14 +122,13 @@ class TiptoesNavBar: UINavigationBar {
     var priorTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 8)
-        label.textColor = UIColor.white
+        label.textColor = UIColor.black
         label.textAlignment = .center
         return label
     }()
     
     var tiptoes: UIView = {
         let toes = UIView()
-        toes.backgroundColor = UIColor(red: 66.0/255.0, green: 69.0/255.0, blue: 78.0/255.0, alpha:1.0)
         return toes
     }()
     
